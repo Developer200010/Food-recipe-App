@@ -1,0 +1,130 @@
+.container{
+width: 100%;
+height: 60vh;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+flex-wrap: wrap;
+gap: 20px;
+padding: 10px;
+}
+.card {
+    width: 240px;
+    height: 300px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin-top: 10px;
+   }
+   
+   img{
+    object-fit: cover ;
+    width: 100px;
+    height: 100px;
+   }
+   
+   
+   .card-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+   }
+   
+   .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   .text-body {
+    color: rgb(134, 134, 134);
+   }
+   
+   /*Text*/
+   .text-title {
+    font-size: 1.0em;
+    font-weight: bold;
+   }
+   
+   /*Hover*/
+   .card:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+   
+   .card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+   }
+
+   /* loader */
+
+   .loading {
+    --speed-of-animation: 0.9s;
+    --gap: 6px;
+    --first-color: #4c86f9;
+    --second-color: #49a84c;
+    --third-color: #f6bb02;
+    --fourth-color: #f6bb02;
+    --fifth-color: #2196f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    gap: 6px;
+    height: 100px;
+   }
+   
+   .loading span {
+    width: 4px;
+    height: 50px;
+    background: var(--first-color);
+    animation: scale var(--speed-of-animation) ease-in-out infinite;
+   }
+   
+   .loading span:nth-child(2) {
+    background: var(--second-color);
+    animation-delay: -0.8s;
+   }
+   
+   .loading span:nth-child(3) {
+    background: var(--third-color);
+    animation-delay: -0.7s;
+   }
+   
+   .loading span:nth-child(4) {
+    background: var(--fourth-color);
+    animation-delay: -0.6s;
+   }
+   
+   .loading span:nth-child(5) {
+    background: var(--fifth-color);
+    animation-delay: -0.5s;
+   }
+   
+   @keyframes scale {
+    0%, 40%, 100% {
+     transform: scaleY(0.05);
+    }
+   
+    20% {
+     transform: scaleY(1);
+    }
+   }
