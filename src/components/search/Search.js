@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./search.css";
 import { Card } from "../card/Card";
+import { json } from "react-router-dom";
 export const Search = () => {
   const [data, setData] = useState();
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("cake");
 
   const handelSearch = (e) => {
     setSearch(e.target.value);
@@ -13,7 +14,9 @@ export const Search = () => {
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
     );
     const jsonData = await get.json();
-    setData(jsonData.meals);
+    const mealsApi = setData(jsonData.meals)
+    window.localStorage.setItem("meal",JSON.stringify(mealsApi));
+    ;
   };
   return (
     <>
@@ -34,6 +37,7 @@ export const Search = () => {
               className="w-full max-w-[160px] bg-white pl-2 text-base font-semibold outline-0"
               placeholder="Api"
               id=""
+              value={search}
               onChange={handelSearch}
             />
             <input
